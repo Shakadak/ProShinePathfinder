@@ -36,12 +36,12 @@ end
 
 -- return a table of node, linked to the node n
 local function expand(n)
-    return getKeys(GlobalMap[n])
+    return getKeys(filter(predicate)(GlobalMap[n]))
 end
 
 -- Take 2 nodes return dist
 local function cost(from, to)
-    return GlobalMap[from][to]
+    return GlobalMap[from][to][1]
 end
 
 -- return estimated cost of goal, 0 is dijkstra
@@ -296,6 +296,7 @@ local function MoveTo(Destination)
     elseif PathDestStore == Destination then
         return MoveWithCalcPath()
     else
+        log("CALCULPATH")
         PathSolution = simpleAStar(goal(Destination))(map)
         if not PathSolution then
             return fatal("Path Not Found ERROR")

@@ -12,7 +12,8 @@ local K_SUBWAY = ss.K_SUBWAY
 
 local KantoMap = {}
 
-KantoMap["Berry Tower Kanto"] = {["Route 13"] = 1}
+KantoMap["Berry Tower Kanto"] = {["Route 13"] = {1, {"cut"}}}
+-- KantoMap["Berry Tower Kanto"] = {["Route 13"] = 1}
 KantoMap["Bike Road Stop"] = {["Route 18"] = 1}
 KantoMap["Celadon City"] = {["Pokecenter Celadon"] = 1, ["Celadon Mart 1"] = 1, ["Route 16"] = 1, ["Route 7"] = 1}
 KantoMap["Celadon Mart 1"] = {["Celadon Mart 2"] = 1, ["Celadon City"] = 1}

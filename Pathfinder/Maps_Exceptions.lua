@@ -46,7 +46,9 @@ end
 local function Mode_MoveToCell(MapName,Xh,Yh,Xl,Yl,Xc,Yc)
 	if lib.inRectangle(Xh,Yh,Xl,Yl) and MapName == getMapName() then
 	    lib.log1time("Exception Resolution:  [ " .. getMapName() .." To " .. PathSolution[1] .." ]  GoTo  X:".. Xc .." Y:" .. Yc)
-		moveToCell(Xc,Yc)
+		if not moveToCell(Xc,Yc) then
+            log("moveToCell failed on exception, dest cell:" .. Xc .. "" ..  Yc)
+        end
 	else
 		return false
 	end
